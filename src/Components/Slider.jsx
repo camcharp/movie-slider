@@ -24,10 +24,12 @@ export default class Slider extends Component {
 			);
 		});
 		return (
-			<div>
-				<h1>Movies coming this week</h1>
-				{movies}
-			</div>
+            <React.Fragment>
+                <h1>Movies coming this week</h1>
+                <div className="container-row">
+                    {movies}
+                </div>
+            </React.Fragment>
 		);
 	}
 }
