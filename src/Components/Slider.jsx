@@ -40,8 +40,8 @@ export default class Slider extends Component {
 		this.setState({ index: this.state.index + 1, id: this.state.movies[this.state.index].id });
 	};
 
-	goToMovie = (movie_id) => {
-		this.setState({ id: movie_id });
+	goToMovie = (movie_index, movie_id) => {
+		this.setState({ index: movie_index, id: movie_id });
 	};
 
 	render() {
@@ -75,7 +75,7 @@ export default class Slider extends Component {
 						/>
 					)}
 				</div>
-				<BulletPagination movies={this.state.movies} id={this.state.id} index={this.state.index} />
+				<BulletPagination goToMovie={this.goToMovie} movies={this.state.movies} id={this.state.id} index={this.state.index} />
 			</React.Fragment>
 		);
 	}
