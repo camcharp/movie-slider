@@ -5,9 +5,9 @@ import Slider from './Components/Slider'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Slider />
+      <header>
       </header>
+        <Slider />
     </div>
   );
 }
