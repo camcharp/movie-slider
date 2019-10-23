@@ -15,6 +15,10 @@ body {
 	margin: 0 auto;
 }
 
+.hidden{
+	visibility: hidden;
+}
+
 /* PAGE */
 .page-container {
 	display: flex;
@@ -29,6 +33,8 @@ body {
 	justify-content: center;
 	width: 500px;
 	height: 500px;
+	max-width: 100vw;
+	max-height: 75vh;
 }
 
 /* MOVIE */
@@ -47,6 +53,10 @@ body {
 .movie-container_infos {
 	background-color: $blue;
 	padding: 6%;
+}
+
+.movie-container_title {
+	font-size: 2em;
 }
 
 /* BULLET */
@@ -84,8 +94,16 @@ body {
 	.bullet-points {
 		font-size: 1.3em;
 	}
+	.page-container{
+		max-height: 100vh;
+	}
+
+	.movie-container_title {
+		font-size: 1.4em;
+	}
 
 	.slider-container {
 		max-width: 100%;
+		max-height: 80vh;
 	}
 }

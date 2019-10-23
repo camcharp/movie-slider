@@ -50,31 +50,29 @@ export default class Slider extends Component {
 
 	render() {
 		const movies = this.state.movies.map((movie) => {
-			return <Movie movie_data={movie} key={movie.id}/>;
+			return <Movie movie_data={movie} key={movie.id} />;
 		});
 
 		let selectedMovie = movies[this.state.index];
+		let arrowClassRight = this.state.index === 0 ? 'icon arrow hidden' : 'icon arrow';
+		let arrowClassLeft = this.state.index === 19 ? 'icon arrow hidden' : 'icon arrow';
 
 		return (
-			<div class="page-container">
+			<div className="page-container">
 				<div className="slider-container">
-					{this.state.index > 0 && (
-						<img
-							src="./svg/arrow-circle-left-solid.svg"
-							className="icon arrow"
-							alt="arrow left"
-							onClick={this.callPreviousMovie}
-						/>
-					)}
+					<img
+						src="./svg/arrow-circle-left-solid.svg"
+						className={arrowClassRight}
+						alt="arrow left"
+						onClick={this.callPreviousMovie}
+					/>
 					{selectedMovie}
-					{this.state.index < 19 && (
-						<img
-							src="./svg/arrow-circle-right-solid.svg"
-							className="icon arrow"
-							alt="arrow right"
-							onClick={this.callNextMovie}
-						/>
-					)}
+					<img
+						src="./svg/arrow-circle-right-solid.svg"
+						className={arrowClassLeft}
+						alt="arrow right"
+						onClick={this.callNextMovie}
+					/>
 				</div>
 				<BulletPagination
 					goToMovie={this.goToMovie}
