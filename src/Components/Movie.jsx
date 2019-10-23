@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Rate from './Rate';
 
 export default class Movie extends Component {
-	cutDescription = (input) => (input.length > 100 ? `${input.substring(0, 100)}...` : input);
+	cutDescription = (input) => {
+		return input.length > 160 ? (`${input.substring(0, 160)}...`): input;
+	};
 
 	render() {
 		return (
