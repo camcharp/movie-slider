@@ -1,5 +1,12 @@
 This project was created with [Create React App](https://github.com/facebook/create-react-app).
 
+## About
+
+This app displays data from [The Movie DB API](https://www.themoviedb.org/documentation/api).
+
+## Deployed App
+To view the project you can [click here](themoviedb-app.netlify.com)
+
 ## Available Scripts
 
 In the project directory, you can run:
