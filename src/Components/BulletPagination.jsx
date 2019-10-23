@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 export default class BulletPagination extends Component {
-
 	render() {
 		const bullets =
 			this.props.id === null ? (

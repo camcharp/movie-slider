@@ -13,19 +13,23 @@ export default class Slider extends Component {
 		};
 	}
 	componentDidMount() {
+		this.fetchData();
+	}
+
+	fetchData = () => {
 		axios
-			.get('https://api.themoviedb.org/3/movie/upcoming?api_key=ed1e1b1b0894efa454d151c4afb39efa')
+			.get('https://api.themoviedb.org/3/movie/upcoming?api_key=ed1e1b1b0894efa454d151c4afb39efa&page=1')
 			.then((res) => {
 				this.setState({ movies: res.data.results, id: res.data.results[0].id });
 				this.addIndexes();
 			})
 			.catch((err) => console.warn(err));
-	}
+	};
 
 	addIndexes = () => {
 		let newMovies = [];
 		if (this.state.movies)
-			this.state.movies.forEach(function(element, index) {
+			this.state.movies.forEach((element, index) => {
 				element.index = index;
 				newMovies.push(element);
 			});
@@ -45,14 +49,11 @@ export default class Slider extends Component {
 	};
 
 	render() {
-		console.log(this.state.movies);
-		console.log('iD????????', this.state.id);
-
 		const movies = this.state.movies.map((movie) => {
-			return <Movie movie_data={movie} key={movie.id} />;
+			return <Movie movie_data={movie} key={movie.id}/>;
 		});
 
-		let thismovie = movies[this.state.index];
+		let selectedMovie = movies[this.state.index];
 
 		return (
 			<React.Fragment>
@@ -65,7 +66,7 @@ export default class Slider extends Component {
 							onClick={this.callPreviousMovie}
 						/>
 					)}
-					{thismovie}
+					{selectedMovie}
 					{this.state.index < 19 && (
 						<img
 							src="./svg/arrow-circle-right-solid.svg"
@@ -75,7 +76,12 @@ export default class Slider extends Component {
 						/>
 					)}
 				</div>
-				<BulletPagination goToMovie={this.goToMovie} movies={this.state.movies} id={this.state.id} index={this.state.index} />
+				<BulletPagination
+					goToMovie={this.goToMovie}
+					movies={this.state.movies}
+					id={this.state.id}
+					index={this.state.index}
+				/>
 			</React.Fragment>
 		);
 	}

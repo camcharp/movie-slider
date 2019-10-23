@@ -2,8 +2,6 @@
 
 $grey: #eef4ed;
 $blue: #8da9c4;
-$darkblue: #032b43;
-$yellow: #ffba08;
 
 *,
 *::before,
@@ -34,17 +32,19 @@ body {
 .content-container {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 }
 
 /* MOVIE */
 
 #movie-container {
-	width: 80vw;
+	width: 50vw;
+	max-width: 60vw;
 	height: 60vh;
 	display: flex;
 	flex-direction: row;
 	background: $blue;
-	margin: 5% auto 2%;
+	margin: 2%;
 }
 
 .movie-container_infos {
@@ -52,7 +52,7 @@ body {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: flex-start;
-	padding: 10%;
+	padding: 0 10%;
 }
 
 .movie-container_title {
@@ -75,7 +75,7 @@ body {
 }
 
 .arrow:hover {
-	color: $yellow;
+	color: $blue;
 }
 
 /* BULLET POINT */
@@ -84,11 +84,15 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	padding: 2px;
+}
+
+.bullet-points_bullet {
+	padding: 3px;
 	cursor: pointer;
 }
 
 .bullet-points_bullet:hover,
 .bullet-points_bullet__active {
-	color: $yellow;
+	padding: 3px;
+	color: $blue;
 }
