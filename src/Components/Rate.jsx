@@ -5,10 +5,10 @@ export default function Rate(props) {
 	const stars = [];
 
 	for (let i = 0; i < rate; i++) {
-		stars.push(<img className="icon" src="star-solid.svg" alt="star" key={`star ${i}`} />);
+		stars.push(<img className="icon" src="./svg/star-solid.svg" alt="star" key={`star ${i}`} />);
 	}
 	for (let i = 0; i < 5 - rate; i++) {
-		stars.push(<img className="icon" src="star-regular.svg" alt="star" key={`empty star ${i}`} />);
+		stars.push(<img className="icon" src="./svg/star-regular.svg" alt="star" key={`empty star ${i}`} />);
 	}
 
 	return <div className="container-row">{stars}</div>;
