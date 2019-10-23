@@ -24,6 +24,6 @@ export default class BulletPagination extends Component {
 					);
 				})
 			);
-		return <div className="bullet-points">{bullets}</div>;
+		return <div className="flex-container-row bullet-points">{bullets}</div>;
 	}
 }

@@ -10,7 +10,7 @@ export default class Movie extends Component {
 
 	render() {
 		return (
-			<div className="movie-container">
+			<div className="flex-container-column movie-container">
 				<img
 					src={`https://image.tmdb.org/t/p/w500${this.props.movie_data.backdrop_path}`}
 					className="movie-container_poster"

@@ -19,17 +19,23 @@ body {
 	visibility: hidden;
 }
 
-/* PAGE */
-.page-container {
+.flex-container-row{
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-container-column{
 	display: flex;
 	flex-direction: column;
+}
+
+/* PAGE */
+.page-container {
 	align-items: center;
 }
 
 /* SLIDER */
 .slider-container {
-	display: flex;
-	flex-direction: row;
 	justify-content: center;
 	width: 500px;
 	height: 500px;
@@ -39,8 +45,6 @@ body {
 
 /* MOVIE */
 .movie-container {
-	display: flex;
-	flex-direction: column;
 	width: 75%;
 	background-color: $blue;
 }
@@ -61,8 +65,6 @@ body {
 
 /* BULLET */
 .bullet-points {
-	display: flex;
-	flex-direction: row;
 	justify-content: center;
 	flex-wrap: nowrap;
 	font-size: 2em;

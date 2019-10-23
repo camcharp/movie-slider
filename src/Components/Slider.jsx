@@ -58,8 +58,8 @@ export default class Slider extends Component {
 		let arrowClassLeft = this.state.index === 19 ? 'icon arrow hidden' : 'icon arrow';
 
 		return (
-			<div className="page-container">
-				<div className="slider-container">
+			<div className="flex-container-column page-container">
+				<div className="flex-container-row slider-container">
 					<img
 						src="./svg/arrow-circle-left-solid.svg"
 						className={arrowClassRight}
