@@ -56,8 +56,8 @@ export default class Slider extends Component {
 		let selectedMovie = movies[this.state.index];
 
 		return (
-			<React.Fragment>
-				<div className="content-container">
+			<div class="page-container">
+				<div className="slider-container">
 					{this.state.index > 0 && (
 						<img
 							src="./svg/arrow-circle-left-solid.svg"
@@ -82,7 +82,7 @@ export default class Slider extends Component {
 					id={this.state.id}
 					index={this.state.index}
 				/>
-			</React.Fragment>
+			</div>
 		);
 	}
 }

@@ -8,9 +8,9 @@ export default class Movie extends Component {
 
 	render() {
 		return (
-			<div id="movie-container">
+			<div className="movie-container">
 				<img
-					src={`https://image.tmdb.org/t/p/w500${this.props.movie_data.poster_path}`}
+					src={`https://image.tmdb.org/t/p/w500${this.props.movie_data.backdrop_path}`}
 					className="movie-container_poster"
 					alt="movie poster"
 				/>
