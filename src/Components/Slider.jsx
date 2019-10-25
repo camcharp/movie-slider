@@ -10,7 +10,6 @@ export default class Slider extends Component {
 		super(props);
 		this.state = {
 			movies: [], // movies from the api call
-			id: null, // id of the displayed movie
 			index: 0 // index of the displayed movie
 		};
 	}
@@ -20,7 +19,7 @@ export default class Slider extends Component {
 		axios
 			.get('https://api.themoviedb.org/3/movie/upcoming?api_key=ed1e1b1b0894efa454d151c4afb39efa&page=1')
 			.then((res) => {
-				this.setState({ movies: res.data.results, id: res.data.results[0].id });
+				this.setState({ movies: res.data.results });
 				this.addIndexes();
 			})
 			.catch((err) => console.warn(err));
@@ -41,12 +40,11 @@ export default class Slider extends Component {
 	callMovie = (operator) => {
 		if (operator === '+') this.setState({ index: this.state.index + 1 });
 		else if (operator === '-') this.setState({ index: this.state.index - 1 });
-		this.setState({ id: this.state.movies[this.state.index].id });
 	};
 
 	// function called by clicking on the bullet points
-	goToMovie = (movie_index, movie_id) => {
-		this.setState({ index: movie_index, id: movie_id });
+	goToMovie = (movie_index) => {
+		this.setState({ index: movie_index });
 	};
 
 	componentDidMount() {
@@ -84,7 +82,7 @@ export default class Slider extends Component {
 				<BulletPagination
 					goToMovie={this.goToMovie}
 					movies={this.state.movies}
-					id={this.state.id}
+	
 					index={this.state.index}
 				/>
 			</div>

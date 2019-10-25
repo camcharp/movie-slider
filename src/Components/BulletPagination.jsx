@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function BulletPagination(props) {
 	const bullets =
-		props.id === null ? (
+		!props.movies ? (
 			<p>Loading</p>
 		) : (
 			props.movies.map((movie) => {
@@ -12,7 +12,7 @@ export default function BulletPagination(props) {
 						className={
 							props.index === movie.index ? 'bullet-points_bullet__active' : 'bullet-points_bullet'
 						}
-						onClick={() => props.goToMovie(movie.index, movie.id)}
+						onClick={() => props.goToMovie(movie.index)}
 					>
 						&#x2022; {/* bullet point */}
 					</p>
